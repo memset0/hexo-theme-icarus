@@ -10,7 +10,12 @@ family-sans       = Lato,
     'WenQuanYi Micro Hei', /* *nix */
     sans-serif
 family-mono       = "Source Code Pro", monospace, "Microsoft YaHei"
+
 theme-color       = #3273dc
+
+shadow-header     = 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
+shadow-card       = 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
+
 gap               = 64px
 screen-tablet     = 769px
 screen-desktop    = 1088px
@@ -330,6 +335,7 @@ figure.highlight
     padding: 0
     min-width: calc(100% +  42px)
     margin: 0 -21px !important
+    margin-bottom: 1em !important
 
     pre,
     table tr:hover
@@ -394,7 +400,12 @@ figure.highlight
     .file
         all: initial
 
-/* Override Again */
+/* 修改内容样式 */
+code
+    color: theme-color !important
+    margin: 0 5px;
+
+/* 修改页面布局 */
 
 .my-content
     width: 75%!important
@@ -404,7 +415,18 @@ figure.highlight
     .my-content
         width: 100%!important
     .my-sidebar
-        display:none/* 修改内容样式 */
+        display: none
+
+
+.navbar
+    .navbar-title
+        font-size: 18px
+    .navbar-item
+        font-size: 15px
+        padding-top: 0.75em
+        padding-bottom: 0.75em
+
+/* 修改内容样式 */
 .card-content
     .title
         font-size: 16px
@@ -424,3 +446,8 @@ figure.highlight
             margin-top: 10px
             margin-bottom: 10px
             font-size: 26px !important
+
+/* 修改阴影和圆角 */
+
+.card
+    border-radius: 2px
