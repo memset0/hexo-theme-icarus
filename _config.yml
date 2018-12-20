@@ -26,8 +26,8 @@ navbar:
         # Home: /
         归档: /archives
         分类: /categories
-        友链: /friends
         标签: /tags
+        友链: /friends
         关于: /about
     # Navigation bar links to be shown on the right
     links:
