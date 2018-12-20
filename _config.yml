@@ -1,11 +1,11 @@
 # Version of the Icarus theme that is currently used
 version: 2.0.0
 # Path or URL to the website's icon
-favicon: /images/favicon.svg
+favicon: /favicon.ico
 # Path or URL to RSS atom.xml
 rss: 
 # Path or URL to the website's logo to be shown on the left of the navigation bar or footer
-logo: /images/logo.svg
+logo: /favicon.ico 
 # Open Graph metadata
 # https://hexo.io/docs/helpers.html#open-graph
 open_graph:
@@ -23,16 +23,15 @@ open_graph:
 navbar:
     # Navigation bar menu links
     menu:
-        Home: /
-        Archives: /archives
-        Categories: /categories
-        Tags: /tags
-        About: /about
+        # Home: /
+        归档: /archives
+        分类: /categories
+        友链: /friends
+        标签: /tags
+        关于: /about
     # Navigation bar links to be shown on the right
     links:
-        Download on GitHub:
-            icon: fab fa-github
-            url: 'http://github.com/ppoffice/hexo-theme-icarus'
+        
 # Footer section link settings
 footer:
     # Links to be shown on the right of the footer section
@@ -43,9 +42,6 @@ footer:
         Attribution 4.0 International:
             icon: fab fa-creative-commons-by
             url: 'https://creativecommons.org/licenses/by/4.0/'
-        Download on GitHub:
-            icon: fab fa-github
-            url: 'http://github.com/ppoffice/hexo-theme-icarus'
 # Article display settings
 article:
     # Code highlight theme
@@ -64,7 +60,13 @@ search:
 # http://ppoffice.github.io/hexo-theme-icarus/categories/Configuration/Comment-Plugins
 comment:
     # Name of the comment plugin
-    type: 
+    type: valine
+    app_id: rHgVqrBsv0EYGFSxzDDIDapm-9Nh9j0Va
+    app_key: X7Dp3hEvRWPbqHBYkOTBXzPm
+    notify: false # Mail notify
+    verify: false # Verify code
+    avatar: mm # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+    placeholder: 留下你的脚印~
 # Share plugin settings
 # http://ppoffice.github.io/hexo-theme-icarus/categories/Configuration/Share-Plugins
 share:
@@ -82,7 +84,7 @@ sidebar:
     right:
         # Whether the right sidebar is sticky when page scrolls
         # http://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/make-a-sidebar-sticky-when-page-scrolls/
-        sticky: false
+        sticky: true
 # Sidebar widget settings
 # http://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
 widgets:
@@ -132,7 +134,7 @@ plugins:
     # http://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Baidu-Analytics
     baidu-analytics:
         # Baidu Analytics tracking id
-        tracking_id: 
+        tracking_id: d8c0a4185322e94013582201484f9131
     # Hotjar user feedback plugin
     # http://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Hotjar
     hotjar:
