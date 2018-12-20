@@ -18,11 +18,11 @@
             </h1>
             <div class="level article-meta is-size-7 is-mobile is-overflow-x-auto">
                 <div class="level-left">
-                    <i class="fa fa-clock"></i>
+                    <i class="far fa-clock"></i>
                     <time class="level-item has-text-grey" datetime="<%= date_xml(post.date) %>">
                         <%= date(post.date) %>
                     </time>
-                    <i class="fa fa-archive"></i>
+                    <i class="far fa-folder"></i>
                     <% if (post.categories && post.categories.length) { %>
                         <div class="level-item">
                             <%- list_categories(post.categories, {
@@ -33,7 +33,7 @@
                             }) %>
                         </div>
                     <% } %>
-                    <i class="fa fa-flag"></i>
+                    <i class="far fa-edit"></i>
                     <% if (!has_config('article.readtime') || get_config('article.readtime') === true) { %>
                         <span class="level-item has-text-grey">
                             <%= word_count(post._content) %> Words
