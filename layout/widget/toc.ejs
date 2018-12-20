@@ -25,15 +25,16 @@ function buildToc(toc) {
     }
     return result;
 }
-%>
+var result = buildToc(_toc(post.content))
+if (result != '') { %>
 <div class="card widget" id="toc">
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
                 <%= _p('widget.catalogue', Infinity) %>
             </h3>
-            <%- buildToc(_toc(post.content)) %>
+            <%- result %>
         </div>
     </div>
 </div>
-<% } %>
+<% }} %>
