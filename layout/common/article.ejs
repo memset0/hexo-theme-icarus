@@ -6,38 +6,43 @@
         <%- index ? '</a>' : '</span>' %>
     </div>
     <% } %>
-    <div class="card-content article <%= post.hasOwnProperty('direction') ? post.direction : '' %>">
+    <div class="card-content article <%= post.hasOwnProperty('direction') ? post.direction : '' %> ">
         <% if (post.layout != 'page') { %>
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="<%= date_xml(post.date) %>"><%= date(post.date) %></time>
-                <% if (post.categories && post.categories.length) { %>
-                <div class="level-item">
-                <%- list_categories(post.categories, {
-                    class: 'has-link-grey ',
-                    show_count: false,
-                    style: 'none',
-                    separator: '&nbsp;/&nbsp;'
-                }) %>
+        <div class="my-title <% if (post.layout == 'post' && !index) { %> my-post-title <% } %>">
+            <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+                <% if (index) { %>
+                    <a class="has-link-black-ter" href="<%- url_for(post.link ? post.link : post.path) %>"><%= post.title %></a>
+                <% } else { %>
+                    <%= post.title %>
+                <% } %>
+            </h1>
+            <div class="level article-meta is-size-7 is-mobile is-overflow-x-auto">
+                <div class="level">
+                    <i class="fa fa-clock"></i>
+                    <time class="level-item has-text-grey" datetime="<%= date_xml(post.date) %>">
+                        <%= date(post.date) %>
+                    </time>
+                    <i class="fa fa-th"></i>
+                    <% if (post.categories && post.categories.length) { %>
+                        <div class="level-item">
+                            <%- list_categories(post.categories, {
+                                class: 'has-link-grey ',
+                                show_count: false,
+                                style: 'none',
+                                separator: '&nbsp;/&nbsp;'
+                            }) %>
+                        </div>
+                    <% } %>
+                    <i class="fa fa-flag"></i>
+                    <% if (!has_config('article.readtime') || get_config('article.readtime') === true) { %>
+                        <span class="level-item has-text-grey">
+                            <%= word_count(post._content) %> Words
+                        </span>
+                    <% } %>
                 </div>
-                <% } %>
-                <% if (!has_config('article.readtime') || get_config('article.readtime') === true) { %>
-                <span class="level-item has-text-grey">
-                    <% const words = word_count(post._content); %>
-                    <% const time = duration((words / 150.0) * 60, 'seconds') %>
-                    <%= `${ time.locale(get_config('language', 'en')).humanize() } ${ __('article.read')} (${ __('article.about') } ${ words } ${ __('article.words') })` %>
-                </span>
-                <% } %>
             </div>
         </div>
         <% } %>
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            <% if (index) { %>
-                <a class="has-link-black-ter" href="<%- url_for(post.link ? post.link : post.path) %>"><%= post.title %></a>
-            <% } else { %>
-                <%= post.title %>
-            <% } %>
-        </h1>
         <div class="content">
             <%- index && post.excerpt ? post.excerpt : post.content %>
         </div>
