@@ -39,9 +39,16 @@ footer:
         Creative Commons:
             icon: fab fa-creative-commons
             url: 'https://creativecommons.org/'
-        Attribution 4.0 International:
+        Attribution:
             icon: fab fa-creative-commons-by
-            url: 'https://creativecommons.org/licenses/by/4.0/'
+            url: 'https://creativecommons.org/licenses/by-nc-nd/4.0/'
+        NonCommercial:
+            icon: fab fa-creative-commons-nc
+            url: 'https://creativecommons.org/licenses/by-nc-nd/4.0/'
+        NoDerivatives:
+            icon: fab fa-creative-commons-nd
+            url: 'https://creativecommons.org/licenses/by-nc-nd/4.0/'
+
 # Article display settings
 article:
     # Code highlight theme
