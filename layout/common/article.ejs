@@ -1,3 +1,38 @@
+<%
+function my_build_toc(toc) {
+    let result = '';
+    if (toc.hasOwnProperty('id') && toc.hasOwnProperty('index') && toc.hasOwnProperty('text')) {
+        result += `<li>
+        <a class="is-flex" href="#${toc.id}">
+        <span class="has-mr-6">${toc.index}</span>
+        <span>${toc.text}</span>
+        </a>`;
+    }
+    let keys = Object.keys(toc);
+    keys.indexOf('id') > -1 && keys.splice(keys.indexOf('id'), 1);
+    keys.indexOf('text') > -1 && keys.splice(keys.indexOf('text'), 1);
+    keys.indexOf('index') > -1 && keys.splice(keys.indexOf('index'), 1);
+    keys = keys.map(k => parseInt(k)).sort((a, b) => a - b);
+    if (keys.length > 0) {
+        result += '<ul class="menu-list">';
+        for (let i of keys) {
+            result += my_build_toc(toc[i]);
+        }
+        result += '</ul>';
+    }
+    if (toc.hasOwnProperty('id') && toc.hasOwnProperty('index') && toc.hasOwnProperty('text')) {
+        result += '</li>';
+    }
+    return result;
+}
+function my_check_no_toc() {
+    if (post.layout != 'post')
+        return false;
+    if (my_build_toc(_toc(post.content)) != '')
+        return false;
+    return true;
+}
+%>
 <div class="card">
     <% if (has_thumbnail(post)) { %>
     <div class="card-image">
@@ -6,7 +41,10 @@
         <%- index ? '</a>' : '</span>' %>
     </div>
     <% } %>
-    <div class="card-content article <%= post.hasOwnProperty('direction') ? post.direction : '' %> ">
+    <div class="card-content article
+        <%= my_check_no_toc() ? 'my-no-toc' : '' %>
+        <%= post.hasOwnProperty('direction') ? post.direction : '' %> 
+    ">
         <% if (post.layout != 'page') { %>
         <div class="my-title <% if (post.layout == 'post' && !index) { %> my-post-title <% } %>">
             <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
