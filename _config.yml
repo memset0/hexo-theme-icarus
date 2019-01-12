@@ -5,7 +5,7 @@ favicon: /favicon.ico
 # Path or URL to RSS atom.xml
 rss: 
 # Path or URL to the website's logo to be shown on the left of the navigation bar or footer
-logo: /favicon.ico 
+logo: /images/logo.png
 # Open Graph metadata
 # https://hexo.io/docs/helpers.html#open-graph
 open_graph:
@@ -23,7 +23,7 @@ open_graph:
 navbar:
     # Navigation bar menu links
     menu:
-        # Home: /
+        # 首页: /
         归档: /archives
         分类: /categories
         标签: /tags
