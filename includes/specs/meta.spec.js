@@ -13,7 +13,7 @@ module.exports = {
     },
     logo: {
         [type]: ['string', 'object'],
-        [defaultValue]: '/images/logo.svg',
+        [defaultValue]: '/images/logo.png',
         [doc]: 'Path or URL to the website\'s logo to be shown on the left of the navigation bar or footer',
         text: {
             [type]: 'string',
