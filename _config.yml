@@ -100,7 +100,8 @@ widgets:
         position: right
         author: memset0
         # author_title: 落霞与孤鹜齐飞，秋水共长天一色
-        location: Hangzhou, China
+        # location: Hangzhou, China
+        location: The Cruel World
         avatar: 
         gravatar: 
         follow_link: 'http://github.com/memset0'
