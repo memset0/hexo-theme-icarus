@@ -454,10 +454,12 @@ code
     border-radius 2px
 
 /* 设置鼠标样式 */
-// *
-//     cursor url('/cur/default.cur'), default;
-// a:hover, button
-//     cursor url('/cur/pointer.cur'), default;
+*
+    cursor url('/cur/default.cur'), default !important;
+// p, h1, h2, h3, h4, h5, h6, pre, code, input, textarea
+//     cursor url('/cur/text.cur'), text !important;
+a:hover, button
+    cursor url('/cur/pointer.cur'), pointer !important;
 
 /* Valine 评论样式 */
 .v
