@@ -24,10 +24,10 @@ navbar:
     # Navigation bar menu links
     menu:
         # 首页: /
-        归档: /archives
         # 分类: /categories
         题解: /categories/Solution/
         算法: /categories/Algorithm/
+        归档: /archives
         标签: /tags
         友链: /friends
         关于: /about
