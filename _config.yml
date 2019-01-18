@@ -107,13 +107,13 @@ widgets:
         avatar: 
         gravatar: 
         follow_link: 'http://github.com/memset0'
-        social_links:
-            Github:
-                icon: fab fa-github
-                url: 'http://github.com/memset0'
-            RSS:
-                icon: fas fa-rss
-                url: /
+        # social_links:
+        #     Github:
+        #         icon: fab fa-github
+        #         url: 'http://github.com/memset0'
+        #     RSS:
+        #         icon: fas fa-rss
+        #         url: /
     -
         type: toc
         position: right
